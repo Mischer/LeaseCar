@@ -1,0 +1,1 @@
+<p align="right">This is Footer - &copy; M.Kultiyasov, 2008</p>

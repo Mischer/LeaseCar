@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+    <package name="leasecar" extends="struts-default">
+    	
+    	<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+        
+        
+        
+        <action name="Login" class="com.epam.leasecar.actions.Login">
+            <result name="user" type = "tiles">tiles.user</result>
+            <result name="admin" type = "tiles">tiles.admin</result>
+            <result name="login" type = "tiles" >tiles.login</result>
+            
+            <!--<result name="admin">/WEB-Test/1.jsp</result>
+            <result name="login">/WEB-Test/Login.jsp</result>-->
+        </action>
+        <action name="Logout" class="com.epam.leasecar.actions.Logout">
+            <result type = "tiles">tiles.login</result>
+        </action>
+        <action name="User" class="com.epam.leasecar.actions.User">
+            <result>/WEB-Test/User.jsp</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        <action name="Admin" class="com.epam.leasecar.actions.Admin">
+            <result>/WEB-Test/Admin.jsp</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        <action name="WiewHavingCar" class="com.epam.leasecar.actions.WiewHavingCar">
+            <result type="tiles">tiles.viewhavingcar</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="WiewHavingCarUser" class="com.epam.leasecar.actions.WiewHavingCarUser">
+            <result type="tiles">tiles.viewhavingcaruser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="DoOrder" class="com.epam.leasecar.actions.DoOrder">
+            <result type="redirectAction">WiewHavingCarUser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        
+        <action name="ViewUser" class="com.epam.leasecar.actions.ViewUser">
+            <result type="tiles">tiles.viewuser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+		<action name="DelAuto" class="com.epam.leasecar.actions.DelAuto">
+            <result  type="redirectAction">WiewHavingCar</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+		
+		<action name="DelUser" class="com.epam.leasecar.actions.DelUser">
+            <result  type="redirectAction">ViewUser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+		
+		<action name="LoadFormForAddAuto" class="com.epam.leasecar.actions.LoadFormForAddAuto">
+            <result type="tiles">tiles.addauto</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="LoadFormForAddUser" class="com.epam.leasecar.actions.LoadFormForAddUser">
+            <result type="tiles">tiles.adduser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="LoadFormForRegistration" class="com.epam.leasecar.actions.LoadFormForRegistration">
+            <result type="tiles">tiles.registrationuser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="LoadFormForRegistration1" class="com.epam.leasecar.actions.LoadFormForRegistration1">
+            <result type="tiles">tiles.registrationuser1</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="AddAuto" class="com.epam.leasecar.actions.AddAuto">
+           <result type = "redirectAction">WiewHavingCar</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+ 		<action name="AddUser" class="com.epam.leasecar.actions.AddUser">
+           <result type = "redirectAction">ViewUser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="AddUser" class="com.epam.leasecar.actions.AddUser">
+           <result type = "redirectAction">ViewUser</result>
+            <result name="forbidden" type="redirectAction">Forbidden</result>
+        </action>
+        
+        <action name="RegistrationUser" class="com.epam.leasecar.actions.RegistrationUser">
+           <result type = "redirectAction">Login</result>
+            <result name="*" type="redirectAction">LoadFormForRegistration1</result>
+        </action>
+        
+ 		<action name="ViewOrder" class="com.epam.leasecar.actions.ViewOrder">
+        	<result type="tiles">tiles.vieworder</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+        
+        <action name="ViewAllOrder" class="com.epam.leasecar.actions.ViewAllOrder">
+        	<result type="tiles">tiles.viewallorder</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+        
+        <action name="ViewRefuseOrder" class="com.epam.leasecar.actions.ViewRefuseOrder">
+        	<result type="tiles">tiles.viewrefuseorder</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+        
+        <action name="ViewConfirmOrder" class="com.epam.leasecar.actions.ViewConfirmOrder">
+        	<result type="tiles">tiles.viewconfirmorder</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+        
+ 		<action name="ViewCarList" class="com.epam.leasecar.actions.ViewCarList">
+        	<result type="tiles">tiles.viewcarlist</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+ 		
+ 		<action name="ViewCarListForUser" class="com.epam.leasecar.actions.ViewCarListForUser">
+        	<result type="tiles">tiles.viewcarlistforuser</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+ 		
+ 		<action name="OrderToArchive" class="com.epam.leasecar.actions.OrderToArchive">
+        	<result type ="redirectAction">ViewOrder</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+ 		<action name="OrderToArchive1" class="com.epam.leasecar.actions.OrderToArchive1">
+        	<result type ="redirectAction">ViewOrder</result>
+        	<result name="forbidden">/403.jsp</result>
+        </action>
+        <!-- Add your actions here -->
+        <action name="Forbidden">
+			<result>/403.jsp</result>
+		</action>
+        <action name="*">
+			<result>/404.jsp</result>
+		</action>
+ </package>
+       
+</struts>
+

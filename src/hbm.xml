@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping>
+
+	<class name="com.epam.leasecar.model.Man" table="MANS">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property  name="name"  />
+		<property  name="login" />
+		<property  name="password" />
+		<property  name="surname" />
+		<property  name="patronymic" />
+		<property  name="role" />
+	</class>
+
+	<joined-subclass name ="com.epam.leasecar.model.User" extends = "com.epam.leasecar.model.Man" table = "USERS">
+	<key column = "MANS_ID"/>
+		<property  name="age"  />
+		<property  name="passportdata" />
+	</joined-subclass>
+
+	<joined-subclass name ="com.epam.leasecar.model.Admin" extends = "com.epam.leasecar.model.Man" table = "ADMINS">
+	<key column = "MANS_ID"/>
+	</joined-subclass>
+
+	<class name="com.epam.leasecar.model.Car" table="CARS">
+	<id name="id">
+			<generator class="native"/>
+	</id>
+	<property  name = "havingg" />
+	<property  name = "name"  />
+	<property  name = "description"  />
+	<property  name = "price"  />
+	</class>
+	
+	<class name="com.epam.leasecar.model.Order" table="ORDERS">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name = "data"/>
+		<property name = "days"/>
+		<property name = "istake"/>
+		<many-to-one name = "user" column = "USERS_ID" />
+		<many-to-one name = "car" column = "CARS_ID" />
+	</class>
+
+	<class name="com.epam.leasecar.model.Archive" table="ARCHIVES">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<many-to-one name = "order" column = "ORDER_ID" />
+	</class>
+	
+
+
+
+
+</hibernate-mapping>

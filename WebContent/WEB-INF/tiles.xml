@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="tiles.nologin" template="/layouts/autoriz/stdLayout.jsp">
+        <put-attribute name="title" value="ProcatAuto"/>
+        <put-attribute name="header" value="/layouts/autoriz/stdHeader.jsp"/>
+        <put-attribute name="menu" value="/layouts/autoriz/stdMenu.jsp"/>
+        <put-attribute name="body" value="/layouts/autoriz/stdBody.jsp"/>
+        <put-attribute name="footer" value="/layouts/autoriz/stdFooter.jsp"/>
+    </definition>
+
+    <definition name="tiles.login" template="/layouts/autoriz/stdLayout.jsp">
+        <put-attribute name="title" value="ProcatAuto"/>
+        <put-attribute name="header" value="/layouts/autoriz/stdHeader.jsp"/>
+        <put-attribute name="menu" value="/layouts/autoriz/stdMenu.jsp"/>
+        <put-attribute name="body" value="/layouts/autoriz/Login.jsp"/>
+        <put-attribute name="footer" value="/layouts/autoriz/stdFooter.jsp"/>
+    </definition>
+    
+    <definition name="tiles.logout" template="/layouts/autoriz/stdLayout.jsp">
+        <put-attribute name="title" value="ProcatAuto"/>
+        <put-attribute name="header" value="/layouts/autoriz/stdHeader.jsp"/>
+        <put-attribute name="menu" value="/layouts/autoriz/stdMenu.jsp"/>
+        <put-attribute name="body" value="/layouts/autoriz/Login.jsp"/>
+        <put-attribute name="footer" value="/layouts/autoriz/stdFooter.jsp"/>
+    </definition>
+    
+    <definition name="tiles.admin" extends="tiles.login">
+        <put-attribute name="header" value="/layouts/admin/adminHeader.jsp"/>
+        <put-attribute name="body" value="/layouts/admin/adminHelloBody.jsp"/>
+        <put-attribute name="menu" value="/layouts/admin/adminMenu.jsp"/>
+    </definition>
+    
+     <definition name="tiles.user" extends="tiles.login">
+        <put-attribute name="header" value="/layouts/user/userHeader.jsp"/>
+        <put-attribute name="body" value="/layouts/user/userHelloBody.jsp"/>
+        <put-attribute name="menu" value="/layouts/user/userMenu.jsp"/>
+    </definition>
+    
+    <definition name="tiles.viewuser" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/ViewUser.jsp"/>
+        
+    </definition>
+    
+	<definition name="tiles.viewhavingcar" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/WiewHavingCar.jsp"/>
+        
+    </definition>
+    
+    <definition name="tiles.viewhavingcaruser" extends="tiles.admin">
+        <put-attribute name="header" value="/layouts/user/userHeader.jsp"/>
+        <put-attribute name="body" value="/layouts/user/WiewHavingCar.jsp"/>
+        <put-attribute name="menu" value="/layouts/user/userMenu.jsp"/>
+    </definition>
+    
+	<definition name="tiles.addauto" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/AddAuto.jsp"/>
+        
+    </definition>
+    
+    <definition name="tiles.adduser" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/AddUser.jsp"/>
+        
+    </definition>
+    
+    <definition name="tiles.registrationuser" extends="tiles.login">   
+        <put-attribute name="body" value="/layouts/autoriz/RegistrationUser.jsp"/>
+    </definition>
+    
+    <definition name="tiles.registrationuser1" extends="tiles.login">   
+        <put-attribute name="body" value="/layouts/autoriz/RegistrationUser1.jsp"/>
+    </definition>
+    
+    <definition name="tiles.vieworder" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/ViewOrder.jsp"/>
+        
+    </definition>
+    
+    <definition name="tiles.viewallorder" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/ViewAllOrder.jsp"/>
+        
+    </definition>
+    
+    <definition name="tiles.viewrefuseorder" extends="tiles.admin">
+       
+        <put-attribute name="body" value="/layouts/admin/ViewRefuseOrder.jsp"/>
+      
+    </definition>
+    
+    <definition name="tiles.viewconfirmorder" extends="tiles.admin">
+      
+        <put-attribute name="body" value="/layouts/admin/ViewConfirmOrder.jsp"/>
+  
+    </definition>
+    
+    <definition name="tiles.viewcarlist" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/ViewCarList.jsp"/>
+       
+    </definition>
+    
+    <definition name="tiles.viewcarlistforuser" extends="tiles.admin">
+        <put-attribute name="header" value="/layouts/user/userHeader.jsp"/>
+        <put-attribute name="body" value="/layouts/user/ViewCarListForUser.jsp"/>
+        <put-attribute name="menu" value="/layouts/user/userMenu.jsp"/>
+    </definition>
+    
+    <definition name="tiles.ordertoarchive" extends="tiles.admin">
+        
+        <put-attribute name="body" value="/layouts/admin/OrderToArchive.jsp"/>
+        
+    </definition>
+    
+<!--
+    <definition name="tiles.teacherOpenCourse" extends="tiles.teacher">
+        <put-attribute name="body" value="/layouts/teacher/teacherOpenCourse.jsp"/>
+    </definition>
+
+    <definition name="tiles.teacherListOfMyOpenCourse" extends="tiles.teacher">
+        <put-attribute name="body" value="/layouts/teacher/teacherListOfMyOpenCourse.jsp"/>
+    </definition>
+
+    <definition name="tiles.teacherListOfOpenCourse" extends="tiles.teacher">
+        <put-attribute name="body" value="/layouts/teacher/teacherListOfOpenCourse.jsp"/>
+    </definition>
+
+    definition name="tiles.student.2" extends="tiles.student">
+        <put-attribute name="body" value="/layouts/studentBody2.jsp"/>
+    </definition-->
+
+</tiles-definitions>
