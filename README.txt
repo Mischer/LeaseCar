@@ -1,0 +1,1 @@
+install Tomcat 6.0 and MySQL 
